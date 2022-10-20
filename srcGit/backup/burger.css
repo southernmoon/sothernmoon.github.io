@@ -1,0 +1,328 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+a,li,button{
+	text-decoration: none;
+	list-style: none;
+}
+
+body{
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body._lock{
+	overflow: hidden;
+}
+.wrapper {
+	min-height: 100%;
+}
+.page {
+	padding: 90px 30px;
+}
+.page_section {
+	padding: 30px;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+.page_section_1 {
+	background: rgb(255, 185, 114);
+}
+
+.page_section_2 {
+	background: rgb(192, 71, 89);
+}
+
+.page_section_3 {
+	background: rgb(255, 149, 177);
+}
+.page_title {
+	font-size: 29px;
+	margin: 0 0 20px 0;
+}
+.page_text {
+	font-size: 17px;
+	line-height: 1.5;
+}
+
+.page_text p{
+	margin: 0 0 20px 0;
+}
+
+.page_subtitle {
+	font-size: 20px;
+	margin: 0 0 20px 0;
+}
+
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: rgb(54, 14, 110);
+	
+}
+.header_container {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	padding: 0 30px;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 70px;
+}
+.header_logo {
+	border-radius: 50%;
+	background: #fff;
+	position: relative;
+	z-index: 5;
+	width: 40px;
+	height: 40px;
+}
+
+.menu_list > li {
+	position: relative;
+	margin: 0 0 0 20px;
+}
+
+.header_menu {
+}
+.menu {
+}
+.menu_icon {
+	display: none;
+}
+.menu_body {
+}
+
+.menu_item {
+}
+.menu_link {
+	color: #fff;
+	font-size: 18px;
+}
+.menu_link:hover {
+	color: rgb(255, 145, 28);
+
+}
+
+.menu_sublist {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background: #000;
+	padding: 15px;
+	min-width: 200px;
+}
+
+.menu_sublist li {
+	margin: 0 0 10px 0;
+}
+
+.menu_sublist li:last-child {
+	margin: 0;
+}
+
+.menu_arrow{
+	display: none;
+}
+
+.submenu_item {
+}
+.submenu_link {
+	color: #fff;
+}
+.submenu_link:hover {
+	color: rgb(0, 255, 47);
+}
+
+body._pc .menu_list > li:hover .menu_sublist{
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0);
+	pointer-events: all;
+}
+body._touch .menu_list > li{
+	display: flex;
+	align-items:center;
+}
+
+body._touch .menu_link{
+	flex: 1 1 auto;
+}
+
+body._touch .menu_arrow{
+	display: block;
+	width: 0;
+	height: 0; 
+	transition: transform 0.1s;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid #fff;
+	margin: 0 0 0 5px;
+}
+
+
+
+body._touch .menu_list > li._active .menu_sublist{
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0);
+	pointer-events: all;
+}
+
+body._touch .menu_list > li._active .menu_arrow{
+	transform: rotate(-180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 767px){
+	.menu_list{
+		display: flex;
+		align-items: center;
+	}
+
+	.menu_list > li {
+		padding: 10px 0;
+	}
+
+	.menu_sublist{
+		transform: translate(0px 10%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all .3s ease 0s;
+		pointer-events: none;
+	}
+}
+
+@media (max-width: 767px){
+	.menu_icon{
+		z-index: 5;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+	}
+
+	.menu_icon::before,
+	.menu_icon::after,
+	.menu_icon span{
+		left: 0;
+		position: absolute;
+		height: 10%;
+		width: 100%;
+		transition: .3s;
+		background: #fff;
+	}
+
+	.menu_icon::before,
+	.menu_icon::after{
+		content: '';
+	}
+
+	.menu_icon::before{
+		top: 0;
+
+	}
+
+	.menu_icon::after{
+		bottom: 0;
+	}
+
+	.menu_icon span{
+		top: 50%;
+		transform: scale(1) translate(0, -50%);
+	}
+
+	.menu_icon._active span{
+		transform: scale(0);
+	}
+
+
+	.menu_icon._active::before{
+		top: 50%;
+		transform: rotate(-45deg) translate(0, -50%);
+	}
+
+	.menu_icon._active::after{
+		bottom: 50%;
+		transform: rotate(45deg) translate(0, 50%);
+	}
+
+	.menu_body{
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.443);
+		padding: 100px 30px 30px 30px;
+		transition: left .3s;
+		overflow: auto;
+	}
+
+	.menu_body._active{
+		left: 0;
+	}
+
+	.menu_body::before{
+		position: fixed;
+		content: '';
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 70px;
+		background-color: rgb(54, 14, 110);
+		z-index: 1;
+	}
+
+
+	.menu_list > li{
+		flex-wrap: wrap;
+		margin: 0 0 30px 0;
+	}
+
+	.menu_list > li:last-child{		
+		margin-bottom: 0;
+	}
+
+	.menu_list > li._active .menu_sublist{
+		display: block;
+	}
+
+
+	.menu_link{
+		font-size: 24px;
+	}
+
+	.menu_sublist{
+		position: relative;
+		background: #fff;
+		flex: 1 1 100%;
+		margin: 20px 0 0 0;
+		display: none;
+	}
+
+	.submenu_link{
+		font-size: 20px;
+		color: #000;
+	}
+
+}
