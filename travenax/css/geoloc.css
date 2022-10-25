@@ -1,0 +1,116 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+a,li,button,input{
+	text-decoration: none;
+	list-style: none;
+	outline: none;
+}
+
+body{
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+:root{
+	--os-medium: font-weight: 500;
+	--os-semibold: font-weight: 600;
+}
+
+/* TODO стили для БигДатаКлауд */
+/* .container{
+	width: 300px;
+	height: 200px;
+	margin: 100px 30px;
+	background: rgb(255, 162, 11);
+}
+
+.find-state{
+	display: block;
+	width: 150px;
+	height: 100px;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 30px;
+	background: rgb(86, 6, 123);
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.status{
+	text-align: center;
+	text-transform: uppercase;
+	color: rgb(0, 0, 0);
+	padding: 20px 0;
+}
+
+.find-state:hover{
+	background: rgb(0, 0, 0);
+} */
+
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background: url('https://source.unsplash.com/1920x1080/?nature,water')
+}
+
+.card{
+	background: rgba(0, 0, 0, 0.891);
+	padding: 2em;
+	border-radius: 20px;
+	width: 100%;
+	min-width: 420px;
+	margin: 1em;
+	color: #fff;
+}
+
+.search{
+	display: flex;
+	align-items: center;
+	gap: 10px;	
+}
+
+.search button{
+	background: #7c7c7c2b;
+	padding: 6px 7px 4px;
+	border-radius: 50%;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.search button:hover{
+	background: #7c7c7c81;
+	padding: 6px 7px 4px;
+	border-radius: 50%;
+}
+
+.search_icon{
+	stroke: #ffffff;
+	
+	width: 24px;
+}
+
+.search-bar{
+	padding: 10px 10px;
+	border-radius: 25px;
+	background: #7c7c7c2b;
+	color: #fff;
+	font-family: var(--os-medium);
+	width: calc(100% - 50px);
+}
+
+h1{
+	margin-top: 20px;
+}
+
+h2{
+	margin-top: 20px;
+}
