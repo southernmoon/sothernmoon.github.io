@@ -278,10 +278,10 @@ h1 span{
 	top: 40%;
 	transform: translate(-50%);
 	width: 30px;
-  height: 30px;
-  border-top: 4px solid #353535;
-  border-right: 4px solid #353535;	
-	z-index: 10;
+  	height: 30px;
+  	border-top: 4px solid #353535;
+  	border-right: 4px solid #353535;	
+	z-index: 5;
 	border-radius: 2px;
 	cursor: pointer;
 }
